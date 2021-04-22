@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+
+  devtools:
+    livereload:
+      enabled: true
+
+  thymeleaf:
+    cache: false
+    enabled: true
+    encoding: UTF-8
+    suffix: .html
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        ddl-auto: none
+
+  #DB configuration
+  mybatis:
+    configuration:
+      map-underscore-to-camel-case: true
+    mapper-locations:
+      - mapper/*.xml
+    type-aliases-package: site.heeseong.portfolio.model
